@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../../assets/logo.png"; // ⬅️ keep lowercase path/name
+import logo from "../../assets/logo.png";
 
 const cx = ({ isActive }) => `nr-link${isActive ? " is-active" : ""}`;
 
@@ -8,11 +8,11 @@ export default function Navbar() {
   return (
     <header className="nr-nav">
       <div className="nr-inner">
-        <Link to="/" className="nr-brand" aria-label="NeuroRoads">
-          <img className="nr-logo" src={logo} alt="" />
+        <Link to="/" className="nr-brand">
+          <img src={logo} alt="NeuroRoads logo" className="nr-logo" />
         </Link>
 
-        <nav className="nr-links" aria-label="Primary">
+        <nav className="nr-links">
           <NavLink end to="/" className={cx}>Home</NavLink>
           <NavLink to="/apps" className={cx}>Apps</NavLink>
           <NavLink to="/about" className={cx}>About</NavLink>

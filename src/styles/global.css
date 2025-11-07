@@ -1,0 +1,6 @@
+/* src/styles/globals.css */
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,Arial;color:#111}
+main.content{min-height:70vh}
+.wrap{max-width:1100px;margin:0 auto;padding:28px}
+input,textarea,button{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:10px}
+button{cursor:pointer}

@@ -1,0 +1,6 @@
+/* src/components/Navbar/Navbar.css */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-bottom:1px solid #eee;background:#fff;position:sticky;top:0;z-index:10}
+.brand{font-weight:700}
+.nav-link{margin:0 10px;padding:8px 10px;border-radius:10px}
+.nav-link.active{background:#f3f4f6}
+.cta{margin-left:12px;padding:8px 14px;border-radius:12px;background:#111;color:#fff}

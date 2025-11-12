@@ -1,10 +1,13 @@
+// src/pages/Home/Home.jsx
 import { Link } from "react-router-dom";
 import { useMemo, useState, useEffect, useRef } from "react";
 import "./Home.css";
 
-/* ====== ASSETS (from src/assets/) ====== */
-import HeroImg from "../../assets/Hero.jpg";
+/* ====== HERO (YouTube Embed) ====== */
+const HERO_VIDEO_ID = "4tAYXNSUong";
+const HERO_EMBED_URL = `https://www.youtube.com/embed/${HERO_VIDEO_ID}`;
 
+/* ====== LOGOS ====== */
 import nvidia from "../../assets/logos/nvidia.svg";
 import windows from "../../assets/logos/windows.svg";
 import ibm from "../../assets/logos/ibm.svg";
@@ -19,7 +22,6 @@ import oracle from "../../assets/logos/oracle.svg";
 import zoom from "../../assets/logos/zoom.svg";
 
 export default function Home() {
-  /* ====== LOGOS ====== */
   const logos = [
     { src: nvidia, alt: "NVIDIA" },
     { src: windows, alt: "Windows" },
@@ -35,12 +37,11 @@ export default function Home() {
     { src: zoom, alt: "Zoom" },
   ];
 
-  /* ====== SLIDER (auto-load all /src/assets/slider/*) ====== */
   const slides = useMemo(() => {
-    const mods = import.meta.glob("../../assets/slider/*.{jpg,jpeg,png,webp}", {
-      eager: true,
-      as: "url",
-    });
+    const mods = import.meta.glob(
+      "../../assets/slider/*.{jpg,jpeg,png,webp}",
+      { eager: true, as: "url" }
+    );
     return Object.values(mods);
   }, []);
 
@@ -48,7 +49,6 @@ export default function Home() {
   const next = () => slides.length && setI((p) => (p + 1) % slides.length);
   const prev = () => slides.length && setI((p) => (p - 1 + slides.length) % slides.length);
 
-  // keyboard navigation
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "ArrowRight") next();
@@ -58,34 +58,38 @@ export default function Home() {
     return () => window.removeEventListener("keydown", onKey);
   }, [slides.length]);
 
-  // touch swipe
   const touchX = useRef(null);
   const onTouchStart = (e) => (touchX.current = e.touches[0].clientX);
   const onTouchEnd = (e) => {
     if (touchX.current == null) return;
     const dx = e.changedTouches[0].clientX - touchX.current;
-    if (Math.abs(dx) > 40) (dx < 0 ? next : prev)();
+    if (Math.abs(dx) > 40) (dx < 0 ? next() : prev());
     touchX.current = null;
   };
 
   return (
     <div className="home">
-      {/* ===== HERO IMAGE ===== */}
+      {/* ===== HERO VIDEO (Drive embed) ===== */}
       <section className="hero">
-        <img src={HeroImg} alt="NeuroRoads VR scene" className="hero-media" />
-      </section>
+  <div className="hero-video-wrapper">
+    <iframe
+      src={`${HERO_EMBED_URL}?autoplay=1&mute=1&loop=1&controls=0&playlist=${HERO_VIDEO_ID}`}
+      title="Neuroroads Hero Video"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+    />
+  </div>
+</section>
 
-      {/* ===== CURVED PANEL ===== */}
-      <section className="curve">
-        <svg className="arc-svg" viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,50 A50,50 0 0 1 100,50 L100,0 L0,0 Z" fill="var(--panel)" />
-        </svg>
 
-        <div className="curve-inner">
-          <Link to="/book-demo" className="btn-outline">Book a DEMO</Link>
+      {/* ===== MAIN PANEL ===== */}
+      <section className="panel">
+        <div className="panel-inner">
+          <Link to="/book-demo" className="btn-outline">
+            Book a DEMO
+          </Link>
           <h1 className="title">Neuroroads</h1>
 
-          {/* Logos */}
           <ul className="logo-grid">
             {logos.map((l, idx) => (
               <li key={idx} className="logo-badge">
@@ -94,7 +98,6 @@ export default function Home() {
             ))}
           </ul>
 
-          {/* Stats */}
           <div className="stats">
             <div className="stat">
               <span className="stat-label">Patients tested</span>
@@ -112,19 +115,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== SECTION TITLE ===== */}
+      <section className="panel panel--narrow">
+        <div className="panel-inner">
+          <h2 className="subtitle">Our Services</h2>
+        </div>
+      </section>
+
       {/* ===== IMAGE SLIDER ===== */}
       <section className="gallery">
-        <button className="arrow left" aria-label="Previous" onClick={prev}>←</button>
+        <button className="arrow left" aria-label="Previous" onClick={prev}>
+          ←
+        </button>
 
         <div className="frame" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
           {slides.length ? (
-            <img key={slides[i]} src={slides[i]} alt={`Slide ${i + 1}`} className="slide" />
+            <img
+              key={slides[i]}
+              src={slides[i]}
+              alt={`Slide ${i + 1}`}
+              className="slide"
+            />
           ) : (
-            <div className="slide placeholder">Add images to <code>src/assets/slider</code></div>
+            <div className="slide placeholder">
+              Add images to <code>src/assets/slider</code>
+            </div>
           )}
         </div>
 
-        <button className="arrow right" aria-label="Next" onClick={next}>→</button>
+        <button className="arrow right" aria-label="Next" onClick={next}>
+          →
+        </button>
       </section>
 
       {/* ===== PRICING ===== */}

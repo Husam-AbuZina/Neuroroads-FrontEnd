@@ -6,7 +6,16 @@
     padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px; /* helps shadow look nicer */
   }
+  
+  .service-block-flipped:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    background: #fff; /* optional */
+  }
+  
   
   .service-text-flipped h2 {
     font-size: 36px;

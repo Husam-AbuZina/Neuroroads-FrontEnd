@@ -1,0 +1,45 @@
+/* ==== INFINITE LOGO MARQUEE ==== */
+.logo-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+  }
+  
+  .logo-track {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  
+    animation: scroll-marquee 18s linear infinite;
+    width: max-content;
+  }
+  
+  .logo-item {
+    flex: 0 0 auto;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background: #0e0e0e;
+    border-radius: 999px;
+  }
+  
+  .logo-item img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    filter: invert(1);
+  }
+  
+  /* Infinite motion */
+  @keyframes scroll-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  

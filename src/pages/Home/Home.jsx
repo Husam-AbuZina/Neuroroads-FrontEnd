@@ -20,6 +20,8 @@ import samsung from "../../assets/logos/samsung.svg";
 import pi from "../../assets/logos/pi.svg";
 import oracle from "../../assets/logos/oracle.svg";
 import zoom from "../../assets/logos/zoom.svg";
+import LogoMarquee from "../../components/LogoMarquee/LogoMarquee";
+
 
 export default function Home() {
   const logos = [
@@ -89,14 +91,10 @@ export default function Home() {
             Book a DEMO
           </Link>
           <h1 className="title">Neuroroads</h1>
+          
+  {/* Logos Marquee */}
+  <LogoMarquee logos={logos} />
 
-          <ul className="logo-grid">
-            {logos.map((l, idx) => (
-              <li key={idx} className="logo-badge">
-                <img src={l.src} alt={l.alt} loading="lazy" />
-              </li>
-            ))}
-          </ul>
 
           <div className="stats">
             <div className="stat">

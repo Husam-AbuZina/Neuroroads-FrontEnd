@@ -1,12 +1,13 @@
 .service-block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;    /* 🟢 align text to top of image */
-  gap: 40px;
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+  }
   
   .service-text h2 {
     font-size: 36px;
@@ -20,16 +21,16 @@
     line-height: 1.6;
   }
   
-  .service-image img {
-    width: 100%;
-    height: auto;            /* 🟢 no cropping */
-    max-height: 380px;       /* optional: control vertical size */
-    object-fit: contain;     /* 🟢 show the ENTIRE image */
-    border-radius: 20px;
-    background: #f7f7f7;     /* subtle background behind image */
-    padding: 10px;           /* optional: makes images look cleaner */
-  }
-  
+.service-image img {
+  width: 100%;
+  height: auto;            /* 🟢 no cropping */
+  max-height: 380px;       /* optional: control vertical size */
+  object-fit: fit;     /* 🟢 show the ENTIRE image */
+  border-radius: 20px;
+  background: #000000;     /* subtle background behind image */
+  padding: 1px;           /* optional: makes images look cleaner */
+}
+
   
   /* Responsive */
   @media (max-width: 860px) {

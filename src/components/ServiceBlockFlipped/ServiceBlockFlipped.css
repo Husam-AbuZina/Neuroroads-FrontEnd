@@ -24,10 +24,10 @@
     width: 100%;
     height: auto;            /* 🟢 no cropping */
     max-height: 380px;       /* optional: control vertical size */
-    object-fit: contain;     /* 🟢 show the ENTIRE image */
+    object-fit: fit;     /* 🟢 show the ENTIRE image */
     border-radius: 20px;
-    background: #f7f7f7;     /* subtle background behind image */
-    padding: 10px;           /* optional: makes images look cleaner */
+    background: #000000;     /* subtle background behind image */
+  padding: 1px;           /* optional: makes images look cleaner */
   }
   
   /* Responsive */

@@ -22,6 +22,7 @@ import oracle from "../../assets/logos/oracle.svg";
 import zoom from "../../assets/logos/zoom.svg";
 import LogoMarquee from "../../components/LogoMarquee/LogoMarquee";
 import Counter from "../../components/Counter/Counter";
+import Space from "../../components/Space/Space";
 
 /* ====== SERVICES IMAGES ====== */
 import img1 from "../../assets/slider/1ScientificResearch.png";
@@ -132,19 +133,20 @@ export default function Home() {
     </span>
   </div>
 </div>
-
         </div>
       </section>
 
+
+      <Space height={90} /> 
       {/* ===== SECTION TITLE ===== */}
       <section className="panel panel--narrow">
         <div className="panel-inner">
-          <h2 className="subtitle">Our Services</h2>
+          <h2 className="title">Our Services</h2>
         </div>
       </section>
 
       {/* ===== IMAGE SLIDER ===== */}
-      <section className="gallery">
+      {/* <section className="gallery">
         <button className="arrow left" aria-label="Previous" onClick={prev}>
           ←
         </button>
@@ -167,7 +169,7 @@ export default function Home() {
         <button className="arrow right" aria-label="Next" onClick={next}>
           →
         </button>
-      </section>
+      </section> */}
 
 {/* === OUR SERVICES SECTION === */}
 <section className="services-section">

@@ -23,6 +23,18 @@ import zoom from "../../assets/logos/zoom.svg";
 import LogoMarquee from "../../components/LogoMarquee/LogoMarquee";
 import Counter from "../../components/Counter/Counter";
 
+/* ====== SERVICES IMAGES ====== */
+import img1 from "../../assets/slider/1ScientificResearch.png";
+import img2 from "../../assets/slider/2MentalHealth.png";
+import img3 from "../../assets/slider/3Analytics.png";
+import img4 from "../../assets/slider/4AnywhereAnytime.png";
+import img5 from "../../assets/slider/5Personalized.png";
+
+/* SERVICE COMPONENTS */
+import ServiceBlock from "../../components/ServiceBlock/ServiceBlock";
+import ServiceBlockFlipped from "../../components/ServiceBlockFlipped/ServiceBlockFlipped";
+
+
 
 
 export default function Home() {
@@ -156,6 +168,42 @@ export default function Home() {
           →
         </button>
       </section>
+
+{/* === OUR SERVICES SECTION === */}
+<section className="services-section">
+
+  <ServiceBlock
+    title="Scientifically Proven Therapy"
+    description="NeuroRoads is backed by certified clinical research and validated through controlled studies to ensure reliability and measurable progress."
+    image={img1}
+  />
+
+  <ServiceBlockFlipped
+    title="Mental Health Support"
+    description="Immersive VR environments designed to help reduce anxiety, improve mood, and support emotional healing."
+    image={img2}
+  />
+
+  <ServiceBlock
+    title="Advanced Analytics"
+    description="Track patient performance with real-time metrics, progress graphs, and detailed insights powered by AI."
+    image={img3}
+  />
+
+  <ServiceBlockFlipped
+    title="Anywhere, Anytime Access"
+    description="NeuroRoads can be used in homes, clinics, and remote therapy setups, giving patients full flexibility."
+    image={img4}
+  />
+
+  <ServiceBlock
+    title="Personalized Therapy Programs"
+    description="Tailored VR sessions that adapt to each patient’s needs, conditions, and pace for maximum recovery impact."
+    image={img5}
+  />
+
+</section>
+
 
       {/* ===== PRICING ===== */}
       <section className="pricing">

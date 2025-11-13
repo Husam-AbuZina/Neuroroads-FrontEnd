@@ -1,45 +1,48 @@
-/* ==== INFINITE LOGO MARQUEE ==== */
+/* Container */
 .logo-marquee {
     width: 100%;
     overflow: hidden;
     padding: 20px 0;
+    position: relative;
   }
   
+  /* Track that slides */
   .logo-track {
     display: flex;
     align-items: center;
-    gap: 40px;
-  
-    animation: scroll-marquee 18s linear infinite;
+    gap: 60px;
+    animation: marquee 18s linear infinite;
     width: max-content;
   }
   
+  /* Each logo box */
   .logo-item {
     flex: 0 0 auto;
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
   
-    background: #0e0e0e;
-    border-radius: 999px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px;
   }
   
+  /* Logos */
   .logo-item img {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    filter: invert(1);
   }
   
-  /* Infinite motion */
-  @keyframes scroll-marquee {
+  /* Infinite scroll keyframes */
+  @keyframes marquee {
     from {
       transform: translateX(0);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(-33.33%); /* Because we tripled the logos */
     }
   }
   

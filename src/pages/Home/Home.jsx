@@ -20,6 +20,12 @@ import samsung from "../../assets/logos/samsung.svg";
 import pi from "../../assets/logos/pi.svg";
 import oracle from "../../assets/logos/oracle.svg";
 import zoom from "../../assets/logos/zoom.svg";
+
+
+import oxford from "../../assets/logos/OxfordUniversity.png";
+import redcresent from "../../assets/logos/PalestineRedCrescent.png";
+import hebronrehabilitation from "../../assets/logos/HebronRehabilitationSociety.jpg";
+
 import LogoMarquee from "../../components/LogoMarquee/LogoMarquee";
 import Counter from "../../components/Counter/Counter";
 import Space from "../../components/Space/Space";
@@ -40,19 +46,11 @@ import ServiceBlockFlipped from "../../components/ServiceBlockFlipped/ServiceBlo
 
 export default function Home() {
   const logos = [
-    { src: nvidia, alt: "NVIDIA" },
-    { src: windows, alt: "Windows" },
-    { src: ibm, alt: "IBM" },
-    { src: intel, alt: "Intel" },
-    { src: cloudflare, alt: "Cloudflare" },
-    { src: sony, alt: "Sony" },
-    { src: openai, alt: "OpenAI" },
-    { src: apple, alt: "Apple" },
-    { src: samsung, alt: "Samsung" },
-    { src: pi, alt: "Raspberry Pi" },
-    { src: oracle, alt: "Oracle" },
-    { src: zoom, alt: "Zoom" },
+    { src: oxford, alt: "Oxford University" },
+    { src: redcresent, alt: "Palestine Red Crescent" },
+    { src: hebronrehabilitation, alt: "Hebron Rehabilitation Society" },
   ];
+  
 
   const slides = useMemo(() => {
     const mods = import.meta.glob(
@@ -105,7 +103,7 @@ export default function Home() {
           <Link to="/book-demo" className="btn-outline">
             Book a DEMO
           </Link>
-          <h1 className="title">Neuroroads</h1>
+          <h1 className="title">Our Partners</h1>
 
   {/* Logos Marquee */}
   <LogoMarquee logos={logos} />

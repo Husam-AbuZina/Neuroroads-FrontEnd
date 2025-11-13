@@ -21,6 +21,8 @@ import pi from "../../assets/logos/pi.svg";
 import oracle from "../../assets/logos/oracle.svg";
 import zoom from "../../assets/logos/zoom.svg";
 import LogoMarquee from "../../components/LogoMarquee/LogoMarquee";
+import Counter from "../../components/Counter/Counter";
+
 
 
 export default function Home() {
@@ -91,25 +93,34 @@ export default function Home() {
             Book a DEMO
           </Link>
           <h1 className="title">Neuroroads</h1>
-          
+
   {/* Logos Marquee */}
   <LogoMarquee logos={logos} />
 
 
-          <div className="stats">
-            <div className="stat">
-              <span className="stat-label">Patients tested</span>
-              <span className="stat-value">+200</span>
-            </div>
-            <div className="stat">
-              <span className="stat-label">Centers Contracted</span>
-              <span className="stat-value">+10</span>
-            </div>
-            <div className="stat">
-              <span className="stat-label">Companies Accepted</span>
-              <span className="stat-value">+30</span>
-            </div>
-          </div>
+  <div className="stats">
+  <div className="stat">
+    <span className="stat-label">Patients tested</span>
+    <span className="stat-value">
+      <Counter value={200} />
+    </span>
+  </div>
+
+  <div className="stat">
+    <span className="stat-label">Centers Contracted</span>
+    <span className="stat-value">
+      <Counter value={10} />
+    </span>
+  </div>
+
+  <div className="stat">
+    <span className="stat-label">Companies Accepted</span>
+    <span className="stat-value">
+      <Counter value={30} />
+    </span>
+  </div>
+</div>
+
         </div>
       </section>
 

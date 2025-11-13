@@ -1,26 +1,26 @@
+// src/components/Counter/Counter.jsx
 import { useEffect, useState } from "react";
 
 export default function Counter({ value, duration = 1800 }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let start = 0;
-    const end = parseInt(value);
-    const totalMs = duration;
-    const incrementTime = 16; // ~60fps
+    const end = Number(value) || 0;
+    const startTime = performance.now();
 
-    const step = Math.ceil(end / (totalMs / incrementTime));
+    const tick = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1); // 0 → 1
+      const current = Math.round(end * progress);
 
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= end) {
-        start = end;
-        clearInterval(timer);
+      setCount(current);
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
       }
-      setCount(start);
-    }, incrementTime);
+    };
 
-    return () => clearInterval(timer);
+    requestAnimationFrame(tick);
   }, [value, duration]);
 
   return <>+{count}</>;

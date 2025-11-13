@@ -45,6 +45,7 @@ import ServiceBlockFlipped from "../../components/ServiceBlockFlipped/ServiceBlo
 
 
 export default function Home() {
+  const STATS_DURATION = 1800; // 1.8s – shared
   const logos = [
     { src: oxford, alt: "Oxford University" },
     { src: redcresent, alt: "Palestine Red Crescent" },
@@ -113,21 +114,21 @@ export default function Home() {
   <div className="stat">
     <span className="stat-label">Patients tested</span>
     <span className="stat-value">
-      <Counter value={200} />
+      <Counter value={200} duration={STATS_DURATION} />
     </span>
   </div>
 
   <div className="stat">
     <span className="stat-label">Centers Contracted</span>
     <span className="stat-value">
-      <Counter value={10} />
+      <Counter value={10} duration={STATS_DURATION} />
     </span>
   </div>
 
   <div className="stat">
     <span className="stat-label">Companies Accepted</span>
     <span className="stat-value">
-      <Counter value={30} />
+      <Counter value={30} duration={STATS_DURATION} />
     </span>
   </div>
 </div>

@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/Neuroroads_Portfolio_Official/', // اسم الريبو على GitHub
+  build: {
+    outDir: 'docs', // عشان GitHub Pages يقرأ من مجلد docs
+  },
 })

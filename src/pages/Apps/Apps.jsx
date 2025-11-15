@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./Apps.css";
 
 // App brand assets (replace with your real ones)
-import appIcon from "../../assets/apps/neuroroads/icon.png";      // 512x512 png
-import heroPoster from "../../assets/apps/neuroroads/hero.jpg";   // 1600x900
+import logo from "../../assets/neuroroadsLogo.svg";
+import heroPoster from "../../assets/apps/neuroroads/apps.png";   // 1600x900
 
 export default function Apps() {
   // Auto-load screenshots from /src/assets/apps/neuroroads/shots/
@@ -22,7 +22,7 @@ export default function Apps() {
       <div className="apps-hero">
         <img className="apps-hero__poster" src={heroPoster} alt="NeuroRoads VR poster" />
         <div className="apps-hero__copy">
-          <img className="apps-icon" src={appIcon} alt="NeuroRoads icon" />
+          <img src={logo} alt="NeuroRoads logo" className="nr-logo" />
           <h1>NeuroRoads</h1>
           <p>Evidence-based VR therapy—real-world tasks, measurable outcomes, clinician control.</p>
           <div className="apps-actions">

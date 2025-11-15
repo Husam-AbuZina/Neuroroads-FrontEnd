@@ -1,7 +1,7 @@
 import "./Contact.css";
 import heroMan from "../../assets/contact/1.png";
-import heroShape from "../../assets/contact/2.png";
-import writeImg from "../../assets/contact/3.png";
+// import heroShape from "../../assets/contact/NeuroroadsLogo.svg";
+import writeImg from "../../assets/contact/NeuroroadsLogo.svg";
 import mapImg from "../../assets/contact/4.png";
 
 export default function Contact() {
@@ -48,17 +48,17 @@ export default function Contact() {
             <div className="dot">📞</div>
             <div>
               <h4>Contact Numbers</h4>
-              <p>+972 595112795</p>
+              <p>+972 569683719</p>
             </div>
           </div>
 
           <div className="card social">
-            <h4>Social Media</h4>
-            <div className="socials">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer">📸</a>
-              <a href="https://x.com" target="_blank" rel="noreferrer">𝕏</a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer">in</a>
-            </div>
+            <h4>Feel Free to contact us any time. Neuroroads Team.</h4>
+            {/* <div className="socials"> */}
+              {/* <a href="https://instagram.com" target="_blank" rel="noreferrer">📸</a> */}
+              {/* <a href="https://x.com" target="_blank" rel="noreferrer">𝕏</a> */}
+              {/* <a href="https://linkedin.com" target="_blank" rel="noreferrer">in</a> */}
+            {/* </div> */}
           </div>
         </div>
 

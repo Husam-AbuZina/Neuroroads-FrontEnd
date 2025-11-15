@@ -2,16 +2,16 @@
 import "./About.css";
 import vision from "../../assets/about/vision.png";
 import mission from "../../assets/about/mission.png";
-import t1 from "../../assets/about/team-1.jpg";
-import t2 from "../../assets/about/team-2.jpg";
-import t3 from "../../assets/about/team-3.jpg";
-import t4 from "../../assets/about/team-4.jpg";
+import t1 from "../../assets/about/husam.png";
+import t2 from "../../assets/about/musa.jpeg";
+import t3 from "../../assets/about/ahmad.jpeg";
+import t4 from "../../assets/about/amjad.jpeg";
 
 export default function About(){
-  const team=[{img:t1,name:"Husam Abuzina",role:"Founder & CEO"},
-              {img:t2,name:"Lead Therapist",role:"Clinical Research"},
-              {img:t3,name:"VR Engineer",role:"XR Development"},
-              {img:t4,name:"Product Designer",role:"UX/UI"}];
+  const team=[{img:t1,name:"Eng. Husam Abuzina",role:"Founder - Software Engineer"},
+              {img:t2,name:"Dr. Musa Alrefayah",role:"Co-Founder Networking Expert"},
+              {img:t3,name:"Eng. Ahmad Sultan",role:"Founder - Game Developer"},
+              {img:t4,name:"Des. Amjad Khamayseh",role:"Co-Founder - Graphic Designer"}];
   return(
     <section className="about">
       <div className="wrap">

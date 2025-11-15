@@ -60,7 +60,7 @@
   padding:16px; text-align:center; transition:transform var(--dur) var(--easing), background var(--dur), border-color var(--dur);
 }
 .about .avatar{ height:180px; border-radius:var(--r-sm); overflow:hidden; background:#f3f4f6; border:1px solid var(--hairline); }
-.about .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+.about .avatar img{ width:100%; height:100%; object-fit:contain; display:block; background-color:white;}
 .about .member h4{ margin:10px 0 2px; font-weight:700; }
 .about .member p{ margin:0; color:var(--muted); }
 .about .member:hover{ background:var(--glass); backdrop-filter:blur(12px); transform:translateY(-2px); border-color:rgba(0,0,0,.18); }

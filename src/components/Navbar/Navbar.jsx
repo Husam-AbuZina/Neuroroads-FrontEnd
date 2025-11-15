@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/neuroroadsLogo.svg";
 
 const cx = ({ isActive }) => `nr-link${isActive ? " is-active" : ""}`;
 

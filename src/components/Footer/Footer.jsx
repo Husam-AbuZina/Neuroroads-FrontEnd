@@ -1,6 +1,8 @@
 import "./Footer.css";
 import apple from "../../assets/logos/apple.svg"; // replace with your mark if you want
 
+import logo from "../../assets/neuroroadsLogo.svg";
+
 export default function Footer() {
   return (
     <footer className="nr-footer" role="contentinfo">
@@ -33,7 +35,7 @@ export default function Footer() {
 
         <div className="nr-mark" aria-hidden="true">
           <span className="nr-mark__circle">
-            <img src={apple} alt="" />
+            <img src={logo} alt="" />
           </span>
         </div>
       </div>

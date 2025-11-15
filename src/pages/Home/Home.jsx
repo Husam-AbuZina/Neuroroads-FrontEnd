@@ -40,6 +40,7 @@ import img5 from "../../assets/slider/5Personalized.png";
 /* SERVICE COMPONENTS */
 import ServiceBlock from "../../components/ServiceBlock/ServiceBlock";
 import ServiceBlockFlipped from "../../components/ServiceBlockFlipped/ServiceBlockFlipped";
+import Pricing from "../../components/Pricing/Pricing";
 
 
 
@@ -207,8 +208,9 @@ export default function Home() {
 
 
       {/* ===== PRICING ===== */}
-      <section className="pricing">
-        {[1, 2, 3].map((k) => (
+      <section>
+      <Pricing />
+        {/* {[1, 2, 3].map((k) => (
           <article key={k} className="card">
             <div className="ribbon">80% OFF</div>
             <h3 className="plan">Premium</h3>
@@ -246,7 +248,7 @@ export default function Home() {
               <li>✔ Updates included</li>
             </ul>
           </article>
-        ))}
+        ))} */}
       </section>
     </div>
   );

@@ -1,0 +1,52 @@
+.service-block-flipped {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 40px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px; /* helps shadow look nicer */
+  }
+  
+  .service-block-flipped:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    background: #fff; /* optional */
+  }
+  
+  
+  .service-text-flipped h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  
+  .service-text-flipped p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .service-image-flipped img {
+    width: 100%;
+    height: auto;            /* 🟢 no cropping */
+    max-height: 380px;       /* optional: control vertical size */
+    object-fit: fit;     /* 🟢 show the ENTIRE image */
+    border-radius: 20px;
+    background: #000000;     /* subtle background behind image */
+  padding: 1px;           /* optional: makes images look cleaner */
+  }
+  
+  /* Responsive */
+  @media (max-width: 860px) {
+    .service-block-flipped {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .service-image-flipped img {
+      height: 300px;
+    }
+  }
+  

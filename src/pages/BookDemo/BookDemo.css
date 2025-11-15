@@ -1,0 +1,195 @@
+.demo {
+  background: #f5f5f7;
+  padding: 72px 20px 96px;
+}
+
+.demo-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* LEFT TEXT SIDE */
+.demo-kicker {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin: 0 0 8px;
+}
+
+.demo-title {
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.demo-sub {
+  margin: 0 0 18px;
+  font-size: 16px;
+  color: #444;
+  max-width: 520px;
+}
+
+.demo-what {
+  font-size: 16px;
+  margin: 18px 0 8px;
+  font-weight: 700;
+}
+
+.demo-list {
+  padding-left: 18px;
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.demo-list li + li {
+  margin-top: 8px;
+}
+
+/* RIGHT FORM CARD */
+.demo-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 26px 26px 28px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.demo-card-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* two-column grid for first/last name */
+.demo-grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* form fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.field input,
+.field textarea,
+.field select {
+  border-radius: 8px;
+  border: 1.5px solid #c5bfff;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  background: #faf9ff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: #6f5df6;
+  box-shadow: 0 0 0 1px #6f5df6;
+  background: #ffffff;
+}
+
+/* checkbox */
+.demo-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #555;
+  margin-top: 4px;
+}
+
+.demo-check input {
+  margin-top: 3px;
+}
+
+/* messages */
+.demo-msg {
+  font-size: 13px;
+  margin: 4px 0 0;
+}
+
+.demo-msg--err {
+  color: #c0392b;
+}
+
+.demo-msg--ok {
+  color: #1a7f37;
+}
+
+/* button */
+.demo-btn {
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #6f5df6;
+  color: #ffffff;
+  transition: background 0.2s ease, transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.demo-btn:hover:not(:disabled) {
+  background: #5a48f0;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(111, 93, 246, 0.4);
+}
+
+.demo-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* legal text */
+.demo-legal {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #777;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .demo-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-card {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .demo-grid2 {
+    grid-template-columns: 1fr;
+  }
+}

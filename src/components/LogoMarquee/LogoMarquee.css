@@ -1,0 +1,48 @@
+/* Container */
+.logo-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+  }
+  
+  /* Track that slides */
+  .logo-track {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    animation: marquee 18s linear infinite;
+    width: max-content;
+  }
+  
+  /* Each logo box */
+  .logo-item {
+    flex: 0 0 auto;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  
+  /* Logos */
+  .logo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Infinite scroll keyframes */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.33%); /* Because we tripled the logos */
+    }
+  }
+  

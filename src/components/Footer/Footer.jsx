@@ -26,7 +26,7 @@ export default function Footer() {
         <address className="nr-contact" aria-label="Contact Information">
           <h4>Contact Information</h4>
           <a href="mailto:husamzinap@gmail.com">husamzinap@gmail.com</a>
-          <a href="https://www.neuroroads.com" target="_blank" rel="noreferrer">www.neuroroads.com</a>
+          {/* <a href="https://www.neuroroads.com" target="_blank" rel="noreferrer">www.neuroroads.com</a> */}
           <div>Hebron – Palestine</div>
           <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram Link</a>
         </address>

@@ -55,26 +55,16 @@
   /* Right circular mark */
   .nr-mark{ display:flex; justify-content:flex-end; align-items:flex-start; }
   .nr-mark__circle {
-    width: 92px;
-    height: 92px;
-    border-radius: 999px;
-  
-    background: #ffffff;                 /* 🤍 pure white background */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 1px solid black;
     display: grid;
     place-items: center;
-  
-    box-shadow: 
-      0 4px 24px rgba(0, 0, 0, 0.08),    /* soft outer shadow */
-      inset 0 0 0 1px rgba(0, 0, 0, 0.06); /* soft inner border for premium look */
   }
   
-  .nr-mark__circle img {
-    width: 42px;
-    height: 42px;
-    filter: none;      /* ✅ remove inversion */
-    mix-blend-mode: normal; /* ensure true colors */
-  }
-  
+
   
   /* Bottom line */
   .nr-foot__bottom{

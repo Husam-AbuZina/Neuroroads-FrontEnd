@@ -1,18 +1,38 @@
 // src/pages/BookDemo/BookDemo.jsx
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "./BookDemo.css";
 
 const COUNTRIES = [
-  "Palestine",
-  "Jordan",
-  "Saudi Arabia",
-  "United Arab Emirates",
-  "Qatar",
-  "Kuwait",
-  "Other",
+  "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia",
+  "Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium",
+  "Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria",
+  "Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad",
+  "Chile","China","Colombia","Comoros","Congo, Democratic Republic of the","Congo, Republic of the",
+  "Costa Rica","Côte d'Ivoire","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica",
+  "Dominican Republic","East Timor","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia",
+  "Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece",
+  "Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India",
+  "Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya",
+  "Kiribati","Korea, North","Korea, South","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon",
+  "Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia",
+  "Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova",
+  "Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands",
+  "New Zealand","Nicaragua","Niger","Nigeria","North Macedonia","Norway","Oman","Pakistan","Palau","Palestine",
+  "Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia",
+  "Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino",
+  "Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore",
+  "Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Sudan","Spain","Sri Lanka","Sudan",
+  "Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Togo","Tonga",
+  "Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates",
+  "United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam",
+  "Yemen","Zambia","Zimbabwe"
 ];
 
+
 export default function BookDemo() {
+  const formRef = useRef();
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -40,21 +60,80 @@ export default function BookDemo() {
     return "";
   };
 
+  // const submit = async (e) => {
+  //   e.preventDefault();
+  //   const err = validate();
+  //   if (err) return setState({ sending: false, ok: null, err });
+
+  //   try {
+  //     setState({ sending: true, ok: null, err: "" });
+
+  //     // EmailJS send
+  //     await emailjs.sendForm(
+  //       "service_p9ur9tj",     // Replace with your service ID
+  //       "template_n7ndy0u",    // Replace with your template ID
+  //       formRef.current,
+  //       { publicKey: "brLIx5lIG2IJLLkOz" } // Replace with your public key
+  //     );
+
+  //     setState({ sending: false, ok: true, err: "" });
+  //     setForm({
+  //       firstName: "",
+  //       lastName: "",
+  //       email: "",
+  //       phone: "",
+  //       company: "",
+  //       jobTitle: "",
+  //       country: "",
+  //       agree: false,
+  //     });
+  //   } catch (error) {
+  //     console.error(error);
+  //     setState({
+  //       sending: false,
+  //       ok: false,
+  //       err: "Something went wrong. Please try again.",
+  //     });
+  //   }
+  // };
+
   const submit = async (e) => {
     e.preventDefault();
+  
     const err = validate();
     if (err) return setState({ sending: false, ok: null, err });
-
+  
     try {
       setState({ sending: true, ok: null, err: "" });
-      // await fetch(`${import.meta.env.VITE_API_BASE}/demo`, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(form),
-      // });
-      await new Promise((r) => setTimeout(r, 700));
-      setState({ sending: false, ok: true, err: "" });
-    } catch {
+  
+      // --- 🔑 THE KEY FIX: CAPTURE THE RESPONSE IN THE 'res' VARIABLE ---
+      const res = await emailjs.send(
+        "service_p9ur9tj",
+        "template_n7ndy0u",
+        {
+          firstName: form.firstName,
+          lastName: form.lastName,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          jobTitle: form.jobTitle,
+          country: form.country,
+          agree: form.agree ? "Yes" : "No",
+        },
+        "brLIx5lIG2IJLLkOz"
+      );
+      // -----------------------------------------------------------------
+  
+      if (res.status === 200) {
+        // Success: The email was sent
+        setState({ sending: false, ok: true, err: "" });
+      } else {
+        // Failure: emailjs rejected the request (though often it throws an error before this)
+        throw new Error("Failed");
+      }
+    } catch (e) {
+      // Catches both network errors AND the 'throw new Error("Failed")' above
+      console.error(e); // Log the actual error for better debugging
       setState({
         sending: false,
         ok: false,
@@ -100,7 +179,7 @@ export default function BookDemo() {
         </div>
 
         {/* RIGHT FORM CARD */}
-        <form className="demo-card" onSubmit={submit} noValidate>
+        <form ref={formRef} className="demo-card" onSubmit={submit} noValidate>
           <h2 className="demo-card-title">Book your demo 👇</h2>
 
           <div className="demo-grid2">

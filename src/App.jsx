@@ -1,27 +1,34 @@
 import { Routes, Route, Link } from "react-router-dom";
-import BookDemo from "./pages/BookDemo/BookDemo"; // your page
-import './App.css';
+import BookDemo from "./pages/BookDemo/BookDemo";
+import "./App.css";
+import "./styles/globals.css";
 
 function App() {
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/book-demo">Book Demo</Link>
+      {/* MOBILE-READY NAV */}
+      <nav className="nav">
+        <div className="nav-inner">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/book-demo" className="nav-link">Book Demo</Link>
+        </div>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/book-demo" element={<BookDemo />} />
-      </Routes>
+      <main className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/book-demo" element={<BookDemo />} />
+        </Routes>
+      </main>
     </>
   );
 }
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to Vite + React</h1>
-      <p>Click "Book Demo" to see the form.</p>
+    <div className="wrap">
+      <h1>Welcome to NeuroRoads</h1>
+      <p>Click "Book Demo" to explore the VR therapy form.</p>
     </div>
   );
 }

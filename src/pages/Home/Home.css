@@ -297,3 +297,39 @@ body {
     gap: 12px;
   }
 }
+
+/* ===== Our Partners Logos ===== */
+@media (max-width: 900px) {
+  .logo-grid {
+    grid-template-columns: repeat(3, minmax(64px, 1fr)); /* fewer columns */
+    gap: 12px;
+    justify-items: center;
+  }
+
+  .logo-badge {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-badge img {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+/* ===== Stats / Numbers Count ===== */
+@media (max-width: 900px) {
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .stat-label {
+    font-size: 16px;
+  }
+
+  .stat-value {
+    font-size: clamp(24px, 8vw, 36px);
+  }
+}

@@ -7,21 +7,6 @@ import "./Home.css";
 const HERO_VIDEO_ID = "4tAYXNSUong";
 const HERO_EMBED_URL = `https://www.youtube.com/embed/${HERO_VIDEO_ID}`;
 
-/* ====== LOGOS ====== */
-import nvidia from "../../assets/logos/nvidia.svg";
-import windows from "../../assets/logos/windows.svg";
-import ibm from "../../assets/logos/ibm.svg";
-import intel from "../../assets/logos/intel.svg";
-import cloudflare from "../../assets/logos/cloudflare.svg";
-import sony from "../../assets/logos/sony.svg";
-import openai from "../../assets/logos/openai.svg";
-import apple from "../../assets/logos/apple.svg";
-import samsung from "../../assets/logos/samsung.svg";
-import pi from "../../assets/logos/pi.svg";
-import oracle from "../../assets/logos/oracle.svg";
-import zoom from "../../assets/logos/zoom.svg";
-
-
 import oxford from "../../assets/logos/OxfordUniversity.png";
 import redcresent from "../../assets/logos/PalestineRedCrescent.png";
 import hebronrehabilitation from "../../assets/logos/HebronRehabilitationSociety.jpg";
@@ -145,32 +130,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== IMAGE SLIDER ===== */}
-      {/* <section className="gallery">
-        <button className="arrow left" aria-label="Previous" onClick={prev}>
-          ←
-        </button>
-
-        <div className="frame" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-          {slides.length ? (
-            <img
-              key={slides[i]}
-              src={slides[i]}
-              alt={`Slide ${i + 1}`}
-              className="slide"
-            />
-          ) : (
-            <div className="slide placeholder">
-              Add images to <code>src/assets/slider</code>
-            </div>
-          )}
-        </div>
-
-        <button className="arrow right" aria-label="Next" onClick={next}>
-          →
-        </button>
-      </section> */}
-
 {/* === OUR SERVICES SECTION === */}
 <section className="services-section">
 
@@ -210,45 +169,6 @@ export default function Home() {
       {/* ===== PRICING ===== */}
       <section>
       <Pricing />
-        {/* {[1, 2, 3].map((k) => (
-          <article key={k} className="card">
-            <div className="ribbon">80% OFF</div>
-            <h3 className="plan">Premium</h3>
-            <p className="sub">Everything you need to get started</p>
-
-            <div className="price">
-              <span className="was">US$ 12.19</span>
-              <div className="nowwrap">
-                <span className="now">US$ 2.49</span>
-                <span className="per">/mo</span>
-              </div>
-              <span className="bonus">+3 Months Free</span>
-            </div>
-
-            <button className="deal">Limited time deal</button>
-            <button className="choose">Choose Plan</button>
-
-            <p className="tiny">
-              Get 48 months for US$ 119.52 (regular price US$ 595.12).<br />
-              Renews at US$ 10.99/mo.
-            </p>
-
-            <ul className="features">
-              <li>✓ Feature one short note.</li>
-              <li>✓ Another concise benefit.</li>
-              <li>✓ Works on all devices.</li>
-              <li>✓ Priority email support.</li>
-            </ul>
-
-            <h4 className="benefits">Premium benefits</h4>
-            <ul className="checks">
-              <li>✔ Access to all scenarios</li>
-              <li>✔ Progress tracking</li>
-              <li>✔ Admin dashboard</li>
-              <li>✔ Updates included</li>
-            </ul>
-          </article>
-        ))} */}
       </section>
     </div>
   );

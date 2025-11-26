@@ -115,3 +115,27 @@
     .shots{ grid-template-columns:38px 1fr 38px; }
   }
   
+  /* CTA Strip Responsive */
+@media (max-width: 1000px) {
+  .cta-strip {
+    flex-direction: column;      /* stack text and button */
+    align-items: flex-start;     /* left-align text */
+    gap: 12px;
+    text-align: left;
+  }
+
+  .cta-strip h3 {
+    font-size: clamp(20px, 4vw, 28px);
+    margin: 0;
+  }
+
+  .cta-strip p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .cta-strip .big {
+    width: 100%;                 /* full-width button */
+    text-align: center;
+  }
+}

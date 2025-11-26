@@ -144,3 +144,38 @@
     }
   }
   
+
+  /* ==== MOBILE RESPONSIVE ==== */
+@media (max-width: 480px) {
+  .nr-inner {
+    padding: 10px 16px;
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    justify-items: center;
+  }
+
+  .nr-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nr-links {
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nr-link {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .nr-cta {
+    padding: 10px 18px;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+}

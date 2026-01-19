@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Apps.css";
 
 // App brand assets (replace with your real ones)
-import logo from "../../assets/neuroroadsLogo.svg";
+import logo from "../../assets/NeuroroadsLogo.svg";
 import heroPoster from "../../assets/apps/neuroroads/apps.png";   // 1600x900
 
 export default function Apps() {

@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/Neuroroads_Portfolio_Official/', // اسم الريبو على GitHub
   build: {
-    outDir: 'docs', // عشان GitHub Pages يقرأ من مجلد docs
+    outDir: 'dist', // عشان GitHub Pages يقرأ من مجلد docs
   },
 })

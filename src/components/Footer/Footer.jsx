@@ -1,7 +1,7 @@
 import "./Footer.css";
 import apple from "../../assets/logos/apple.svg"; // replace with your mark if you want
 
-import logo from "../../assets/neuroroadsLogo.svg";
+import logo from "../../assets/NeuroroadsLogo.svg";
 
 export default function Footer() {
   return (

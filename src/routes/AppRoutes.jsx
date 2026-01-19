@@ -1,6 +1,6 @@
 // src/routes/AppRoutes.jsx
 import { Routes, Route, Navigate } from "react-router-dom";
-import Layout from '../Layout/Layout';
+import Layout from '../layout/Layout';
 import Home from "../pages/Home/Home";
 import Apps from "../pages/Apps/Apps";
 import About from "../pages/About/About";
